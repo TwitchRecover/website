@@ -9,3 +9,10 @@ html,body {
     margin:0;
     box-sizing: border-box;
 }
+
+/* 70px to remove the navbar*/
+.fullscreen {
+    min-height: calc(100vh - 70px);
+    min-height: -moz-calc(100vh - 70px);
+    min-height: -webkit-calc(100vh - 70px);
+}
