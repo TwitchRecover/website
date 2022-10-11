@@ -78,25 +78,3 @@ function Navbar() {
 }
 
 export default Navbar;
-
-
-/*
-return (
-<nav className="sticky top-0 z-50">
-    <div>
-        <div>
-            <Link to="/"><img src={logo} alt="Icon" width="70px" height="70px" /></Link>
-        </div>
-
-        <ul>
-            <li>Download</li>
-            <li>Tools</li>
-            <li>Wiki</li>
-            <li>Donate</li>
-            <li><a href="https://github.com/TwitchRecover/TwitchRecover" target="_blank" rel="noopener noreferrer"><BsGithub/></a></li>
-            <li><a href="https://discord.twitchrecover.com" target="_blank" rel="noopener noreferrer"><BsDiscord/></a></li>
-        </ul>
-    </div>
-</nav>
-);
-*/
