@@ -16,3 +16,9 @@ html,body {
     min-height: -moz-calc(100vh - 70px);
     min-height: -webkit-calc(100vh - 70px);
 }
+
+.fullscreen70 {
+    min-height: calc(70vh - 70px);
+    min-height: -moz-calc(70vh - 70px);
+    min-height: -webkit-calc(70vh - 70px);
+}
