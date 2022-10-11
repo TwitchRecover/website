@@ -1,4 +1,5 @@
 import { BsDownload } from "react-icons/bs"
+import Cardsection from "./cardsection";
 import { getOS } from "../../utils/getos";
 
 // TODO set up download and have it pick based on detected OS
@@ -6,14 +7,14 @@ import { getOS } from "../../utils/getos";
 
 function Home() {
 
-    const handleClick = (e:any) => {
+    const handleClick = (e:React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
         //console.log("Handle download");
         // Should handle download for detected OS.
     }
 
     return ( 
         <>
-        <main className="flex flex-col md:flex-row justify-start md:justify-center items-center h-screen">
+        <main className="flex flex-col md:flex-row justify-start md:justify-center items-center fullscreen70">
             <div className="mx-6 md:ml-6 md:mr-0 lg:ml-12">
                 <h1 className="font-bold text-3xl md:text-7xl mb-4 md:mb-6 mt-6 md:mt-0">Twitch Recover</h1>
                 <p className="text-lg md:text-2xl md:w-4/5 mb-10 md:mb-24">Twitch Recover is a free tool that allows you to view, recover and download all types of Twitch videos.</p>
@@ -31,6 +32,7 @@ function Home() {
                 or image of the GUI tool
             </div>
         </main>
+        <Cardsection/>
         </>
      );
 }
