@@ -1,11 +1,25 @@
+import { useEffect, useState } from "react";
 import { BsDownload } from "react-icons/bs"
 import Cardsection from "./cardsection";
 import { getOS } from "../../utils/getos";
-
+import { fetchRelease } from "../../utils/fetchRelease";
 // TODO set up download and have it pick based on detected OS
 // TODO set up the browser download tool or image of the GUI
 
 function Home() {
+    const [ release, setRelease ] = useState<string>("");
+
+    useEffect(() => {
+        const callFetchRelease = async () => {
+            let fetchData = await fetchRelease();
+            if (typeof fetchData !== "string") {
+                setRelease(fetchData[0].tag_name);
+            }
+        }
+        callFetchRelease();
+
+        return ()=>{}; // Clean up.
+    },[]);
 
     const handleClick = (e:React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
         //console.log("Handle download");
@@ -22,7 +36,7 @@ function Home() {
                 <button onClick={(e)=>handleClick(e)} className="bg-slate-700 rounded-3xl flex items-center justify-between text-white w-3/4 sm:w-6/12 md:w-7/12 lg:w-5/12 p-4 sm:p-8 md:p-6 mb-8 md:m-20">
                     <div className="flex flex-col items-start text-left">
                         <h3 className="font-medium text-lg md:text-xl">Download Twitch Recover</h3>
-                        <a href="https://github.com/TwitchRecover/TwitchRecover/releases" target="_blank" rel="noopener noreferrer"><p>{`Version 1.1.1 ${getOS()}`}</p></a>
+                        <a href="https://github.com/TwitchRecover/TwitchRecover/releases" target="_blank" rel="noopener noreferrer"><p>{`Version ${release} ${getOS()}`}</p></a>
                     </div>
                     <div className="text-4xl md:text-5xl pr-2 md:pr-0"><BsDownload /></div>
                 </button>
