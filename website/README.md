@@ -1,3 +1,8 @@
+## Set up
+
+Run the project locally by running `yarn install` and after installation running `yarn start`. It should run on [http://localhost:3000](http://localhost:3000).
+
+
 ## Available Scripts
 
 In the project directory, you can run:
